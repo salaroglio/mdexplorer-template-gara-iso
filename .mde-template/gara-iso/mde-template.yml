@@ -18,9 +18,10 @@ workflows:
 instructions: .mde-template/gara-iso/istruzioni.md
 seeds:
   - { from: .mde-template/gara-iso/semi/README.md, to: gare/README.md }
-  - { from: .mde-template/gara-iso/semi/profilo-azienda.md, to: gare/profilo-azienda.md }
-  - { from: .mde-template/gara-iso/semi/bandi.md, to: gare/bandi.md }
-  - { from: .mde-template/gara-iso/semi/registro-bandi.md, to: gare/registro-bandi.md }
+  - { from: .mde-template/gara-iso/esempio/profilo-azienda.md, to: gare/profilo-azienda.md }
+  - { from: .mde-template/gara-iso/esempio/bandi.md, to: gare/bandi.md }
+  - { from: .mde-template/gara-iso/esempio/registro-bandi.md, to: gare/registro-bandi.md }
   - { from: .mde-template/gara-iso/semi/documenti-di-gara.md, to: gare/documenti-di-gara/README.md }
   - { from: .mde-template/gara-iso/semi/ricerche.md, to: gare/ricerche/README.md }
   - { from: .mde-template/gara-iso/semi/schede.md, to: gare/schede/README.md }
+  - { from: .mde-template/gara-iso/esempio/NC-2027-014-capitolato.md, to: gare/documenti-di-gara/NC-2027-014-capitolato.md }
