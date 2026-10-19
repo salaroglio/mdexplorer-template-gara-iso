@@ -1,6 +1,11 @@
 ---
 document_type: slides
+reveal:
+  theme: mde-space
 ---
+
+<!-- .slide: data-background-image="/mde-space/sfondi/marte.svg" class="mde-cielo" -->
+<img class="mde-icona-grande" src="/mde-space/icone/razzo.svg" alt="">
 
 # Gara con ISO 9001
 
@@ -9,7 +14,7 @@ con il riesame dei requisiti **prima di impegnarsi**.
 
 ---
 
-## A che cosa serve
+## <img class="mde-icona" src="/mde-space/icone/telescopio.svg" alt=""> A che cosa serve
 
 - Una gara si decide spesso in fretta, e i requisiti si scoprono dopo la firma
 - La ISO 9001 chiede di riesaminarli **prima** di impegnarsi con il cliente (8.2.3)
@@ -17,7 +22,7 @@ con il riesame dei requisiti **prima di impegnarsi**.
 
 ---
 
-## Il giro
+## <img class="mde-icona" src="/mde-space/icone/razzo.svg" alt=""> Il giro
 
 1. **Cerca i bandi** — l'agente dell'account manager li trova e ne fa la sintesi
 2. **Tre schede** — tecnica, contrattuale, delivery: ognuna dal suo responsabile
@@ -26,7 +31,7 @@ con il riesame dei requisiti **prima di impegnarsi**.
 
 ---
 
-## Chi fa che cosa
+## <img class="mde-icona" src="/mde-space/icone/astronauta.svg" alt=""> Chi fa che cosa
 
 - **Account manager** — cerca i bandi, avvia il giro, decide
 - **Responsabile tecnico** — approva la scheda tecnica
@@ -37,7 +42,7 @@ Gli agenti preparano, **le persone approvano e decidono**.
 
 ---
 
-## Che cosa resta registrato
+## <img class="mde-icona" src="/mde-space/icone/bandiera.svg" alt=""> Che cosa resta registrato
 
 - Il riesame è un documento in git: chi, quando, su quale versione
 - La decisione sta nel registro dei giri, con il commit approvato
@@ -45,7 +50,7 @@ Gli agenti preparano, **le persone approvano e decidono**.
 
 ---
 
-## Che cosa trovi nel progetto
+## <img class="mde-icona" src="/mde-space/icone/base.svg" alt=""> Che cosa trovi nel progetto
 
 - `gare/`: il profilo dell'azienda da compilare, i bandi, il registro, le cartelle delle schede
 - quattro agenti e i loro ruoli, ancora senza nome: li prende chi ne risponde
@@ -54,7 +59,8 @@ Gli agenti preparano, **le persone approvano e decidono**.
 
 ---
 
-## Come si comincia
+<!-- .slide: data-background-image="/mde-space/sfondi/luna.svg" class="mde-cielo" -->
+## <img class="mde-icona" src="/mde-space/icone/razzo.svg" alt=""> Come si comincia
 
 1. Ognuno prende il suo ruolo («È mio»)
 2. I responsabili compilano il loro capitolo di `gare/profilo-azienda.md`
