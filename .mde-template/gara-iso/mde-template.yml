@@ -3,9 +3,9 @@ id: gara-iso
 kind: method
 title: Gara con ISO 9001
 description: "Dal bando alla decisione se partecipare, con il riesame dei requisiti prima di impegnarsi (ISO 9001, 8.2.3) registrato."
-version: 1.1.0
+version: 1.2.0
 requires:
-  mde: 2026.10.19
+  mde: 2026.10.19.11
 languages:
   it: { structure: main, example: esempio }
 roles:
