@@ -2,7 +2,7 @@ mde_template: 1
 id: iso9001
 kind: method
 title: ISO 9001
-description: "Il sistema di gestione per la qualità come insieme di workflow fatti bene: i processi descritti, ciascuno con chi prepara e chi approva, e le prove che restano in git per l'audit."
+description: "The quality management system as a set of well-made workflows: the processes described, each with who prepares and who approves, and the evidence that stays in git for the audit."
 version: 2.1.0
 requires:
   mde: 2026.10.19.14
@@ -10,20 +10,19 @@ languages:
   it: { structure: main, example: esempio }
   en: { structure: en, example: example }
 roles:
-  - { role: Responsabile qualità, description: "risponde del sistema qualità: approva i processi e i loro workflow", agents: [iso9001-progettista] }
-  - { role: Auditor interno, description: "fa l'audit interno; non controlla i processi di cui risponde", agents: [iso9001-auditor] }
-  - { role: Direzione, description: "decide le azioni dopo l'audit e fa il riesame di direzione" }
+  - { role: Quality manager, description: "answers for the quality system: approves the processes and their workflows", agents: [iso9001-designer] }
+  - { role: Internal auditor, description: "does the internal audit; does not audit the processes they answer for", agents: [iso9001-auditor] }
+  - { role: Management, description: "decides the actions after the audit and does the management review" }
 workflows:
-  - .mde-template/iso9001/workflows/processo.md
+  - .mde-template/iso9001/workflows/process.md
   - .mde-template/iso9001/workflows/audit.md
-instructions: .mde-template/iso9001/istruzioni.md
+instructions: .mde-template/iso9001/instructions.md
 slides:
-  it: .mde-template/iso9001/presentazione.md
   en: .mde-template/iso9001/presentation.md
 theory:
-  it: { from: .mde-template/iso9001/teoria, to: teoria/iso9001 }
+  en: { from: .mde-template/iso9001/theory, to: theory/iso9001 }
 seeds:
-  - { from: .mde-template/iso9001/semi/qualita.md, to: qualita/README.md }
-  - { from: .mde-template/iso9001/semi/processi.md, to: qualita/processi.md }
-  - { from: .mde-template/iso9001/semi/proposte.md, to: qualita/proposte/README.md }
-  - { from: .mde-template/iso9001/semi/audit.md, to: qualita/audit/README.md }
+  - { from: .mde-template/iso9001/seeds/quality.md, to: quality/README.md }
+  - { from: .mde-template/iso9001/seeds/processes.md, to: quality/processes.md }
+  - { from: .mde-template/iso9001/seeds/proposals.md, to: quality/proposals/README.md }
+  - { from: .mde-template/iso9001/seeds/audit.md, to: quality/audit/README.md }
