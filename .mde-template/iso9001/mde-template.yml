@@ -12,16 +12,29 @@ roles:
   - { role: Responsabile qualità, description: "risponde del sistema qualità: approva i processi e i loro workflow", agents: [iso9001-progettista] }
   - { role: Auditor interno, description: "fa l'audit interno; non controlla i processi di cui risponde", agents: [iso9001-auditor] }
   - { role: Direzione, description: "decide le azioni dopo l'audit e fa il riesame di direzione" }
+  - { role: Account manager, description: "cerca i bandi, fa la sintesi e decide se partecipare", agents: [iso9001-account-manager] }
+  - { role: Responsabile tecnico, description: approva la scheda tecnica, agents: [iso9001-responsabile-tecnico] }
+  - { role: Responsabile legale, description: approva la scheda contrattuale, agents: [iso9001-responsabile-legale] }
+  - { role: Responsabile delivery, description: approva la scheda di delivery, agents: [iso9001-responsabile-delivery] }
 workflows:
   - .mde-template/iso9001/workflows/processo.md
   - .mde-template/iso9001/workflows/audit.md
-instructions: .mde-template/iso9001/istruzioni.md
+  - .mde-template/iso9001/workflows/gara.md
+instructions: .mde-template/iso9001/esempio/istruzioni.md
 slides:
   it: .mde-template/iso9001/presentazione.md
 theory:
   it: { from: .mde-template/iso9001/teoria, to: teoria/iso9001 }
 seeds:
   - { from: .mde-template/iso9001/semi/qualita.md, to: qualita/README.md }
-  - { from: .mde-template/iso9001/semi/processi.md, to: qualita/processi.md }
+  - { from: .mde-template/iso9001/esempio/processi.md, to: qualita/processi.md }
   - { from: .mde-template/iso9001/semi/proposte.md, to: qualita/proposte/README.md }
   - { from: .mde-template/iso9001/semi/audit.md, to: qualita/audit/README.md }
+  - { from: .mde-template/iso9001/gara/semi/README.md, to: gare/README.md }
+  - { from: .mde-template/iso9001/esempio/profilo-azienda.md, to: gare/profilo-azienda.md }
+  - { from: .mde-template/iso9001/esempio/bandi.md, to: gare/bandi.md }
+  - { from: .mde-template/iso9001/esempio/registro-bandi.md, to: gare/registro-bandi.md }
+  - { from: .mde-template/iso9001/gara/semi/documenti-di-gara.md, to: gare/documenti-di-gara/README.md }
+  - { from: .mde-template/iso9001/gara/semi/ricerche.md, to: gare/ricerche/README.md }
+  - { from: .mde-template/iso9001/gara/semi/schede.md, to: gare/schede/README.md }
+  - { from: .mde-template/iso9001/esempio/NC-2027-014-capitolato.md, to: gare/documenti-di-gara/NC-2027-014-capitolato.md }
