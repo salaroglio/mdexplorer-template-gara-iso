@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.1.0 — 2026-10-20
+- Il metodo parla anche inglese: i rami `en` (struttura) ed `example` (la gara), con agenti, workflow, skill, file iniziali e teoria in inglese, e le slide inglesi per la vetrina.
+
 ## 2.0.0 — 2026-10-20
 - ⚠️ incompatibile: il metodo diventa «ISO 9001», con id `iso9001` (era `gara-iso`, «Gara con ISO 9001»). Cosa fare: un progetto creato con `gara-iso` resta com'è e non si aggiorna; per il metodo nuovo aggiungi `iso9001` dalle impostazioni del progetto.
 - Il sistema qualità come workflow: `qualita/processi.md`, il progettista che propone il workflow di un processo, l'assistente dell'auditor interno, i workflow «Un processo diventa un workflow» e «L'audit interno», la skill `iso9001-processi`.
