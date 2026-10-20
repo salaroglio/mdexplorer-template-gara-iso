@@ -1,0 +1,32 @@
+{
+  "mde_workflow": 3,
+  "title": "Un processo diventa un workflow",
+  "description": "Il progettista propone il workflow dei processi da progettare; il responsabile qualità decide se la proposta si realizza.",
+  "steps": [
+    {
+      "id": "proposta",
+      "agent": "iso9001-progettista",
+      "skill": "proponi-workflow",
+      "title": "Proponi il workflow",
+      "trigger": { "launch": true },
+      "start": "manual"
+    },
+    {
+      "id": "decisione",
+      "person": "Responsabile qualità",
+      "title": "Decidi la proposta",
+      "trigger": { "after": ["proposta"] },
+      "task": "Leggi la proposta, rispondi alle domande aperte e decidi se si realizza: il workflow lo metti in funzione con il MarkAgent (skill mde-workflow), poi in qualita/processi.md scrivi il suo percorso al posto di «da progettare».",
+      "inputs": {
+        "proposta": { "from": "proposta.proposta" }
+      },
+      "outcomes": [
+        { "id": "si-realizza", "label": "Si realizza" },
+        { "id": "da-rifare", "label": "Da rifare" }
+      ]
+    }
+  ],
+  "loops": [
+    { "id": "rifacimento", "steps": ["proposta"], "until": "approved", "restart": "manual" }
+  ]
+}

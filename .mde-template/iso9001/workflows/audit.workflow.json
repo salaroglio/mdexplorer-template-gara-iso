@@ -1,0 +1,32 @@
+{
+  "mde_workflow": 3,
+  "title": "L'audit interno",
+  "description": "L'audit interno del piano (ISO 9001, 9.2): il rapporto con le prove, approvato dall'auditor interno; la direzione decide le azioni.",
+  "steps": [
+    {
+      "id": "rapporto",
+      "agent": "iso9001-auditor",
+      "skill": "audit-interno",
+      "title": "Prepara il rapporto",
+      "trigger": { "launch": true },
+      "start": "manual"
+    },
+    {
+      "id": "azioni",
+      "person": "Direzione",
+      "title": "Decidi le azioni",
+      "trigger": { "after": ["rapporto"] },
+      "task": "Leggi il rapporto dell'audit interno e decidi: per ogni rilievo, la correzione o l'azione correttiva (ISO 9001, 10.2), chi la fa ed entro quando. La decisione, con chi e quando, resta nel registro dei giri.",
+      "inputs": {
+        "rapporto": { "from": "rapporto.rapporto" }
+      },
+      "produces": [
+        { "id": "azioni", "path": "qualita/audit/azioni-*.md", "note": "le azioni decise, rilievo per rilievo" }
+      ],
+      "outcomes": [
+        { "id": "azioni-decise", "label": "Azioni decise" },
+        { "id": "nessuna-azione", "label": "Nessuna azione" }
+      ]
+    }
+  ]
+}
