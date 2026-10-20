@@ -6,35 +6,35 @@ title: ISO 9001
 
 ## TL;DR
 
-Un metodo di lavoro per MdExplorer: il sistema di gestione per la qualità come insieme di workflow fatti bene. I processi
-si descrivono in `qualita/processi.md`, un agente propone come farne dei workflow, un altro prepara l'audit interno con
-le prove che i giri lasciano in git; le persone approvano e decidono.
+A way of working for MdExplorer: the quality management system as a set of well-made workflows. The processes are
+described in `quality/processes.md`, one agent proposes how to turn them into workflows, another prepares the internal
+audit with the evidence the rounds leave in git; the people approve and decide.
 
-- Si sceglie in «Crea nuovo progetto», sopra lo strato comune, o si aggiunge a un progetto che c'è già.
-- Con l'esempio, il progetto nasce anche con il workflow della gara (riesame dei requisiti, 8.2.3) e una gara compilata.
-- La teoria, se la chiedi, arriva in `teoria/iso9001/`: un sistema ISO 9001 visto come workflow, clausola per clausola.
+- It is chosen in «Create new project», on top of the common layer, or added to an existing project.
+- With the example, the project also starts with the tender workflow (requirements review, 8.2.3) and a filled-in tender.
+- The theory, if you ask for it, lands in `theory/iso9001/`: an ISO 9001 system seen as workflows, clause by clause.
 
-## Che cosa porta
+## What it brings
 
-| Che cosa | Dove |
+| What | Where |
 |---|---|
-| I due workflow: un processo diventa un workflow, l'audit interno | `workflows/` |
-| Le schede dei due agenti: progettista, assistente dell'auditor interno | `agents/` |
-| I ruoli: Responsabile qualità, Auditor interno, Direzione | il documento delle responsabilità, come ruoli aperti |
-| Le istruzioni per gli agenti del progetto | un blocco in `CLAUDE.md`, `AGENTS.md`, `copilot-instructions.md` |
-| I file iniziali del gruppo | `qualita/`, copiati una volta da `semi/` |
-| La skill dei processi | `.claude/skills/iso9001-processi/` |
-| La teoria | `teoria/`, copiata in `teoria/iso9001/` se la chiedi |
+| The two workflows: a process becomes a workflow, the internal audit | `workflows/` |
+| The cards of the two agents: designer, internal auditor's assistant | `agents/` |
+| The roles: Quality manager, Internal auditor, Management | the project's responsibilities document, as open roles |
+| The instructions for the project's agents | a block in `CLAUDE.md`, `AGENTS.md`, `copilot-instructions.md` |
+| The group's starting files | `quality/`, copied once from `seeds/` |
+| The processes skill | `.claude/skills/iso9001-processes/` |
+| The theory | `theory/`, copied into `theory/iso9001/` if you ask for it |
 
-## Come si comincia
+## How to start
 
-1. Chi risponde dei ruoli li prende nel documento delle responsabilità (o dice «È mio» nella città degli agenti).
-2. Con il MarkAgent descrivete i processi in `qualita/processi.md`; segnate «da progettare» quelli da trasformare.
-3. Il responsabile qualità lancia il progettista, legge le proposte, mette in funzione i workflow approvati.
-4. Scrivete il piano degli audit in `qualita/audit/README.md`; l'auditor interno lancia l'audit quando arriva la data.
+1. Whoever answers for the roles takes them in the responsibilities document (or says «It's mine» in the agent city).
+2. With the MarkAgent, describe the processes in `quality/processes.md`; mark «to design» the ones to turn into workflows.
+3. The quality manager launches the designer, reads the proposals, puts the approved workflows to work.
+4. Write the audit plan in `quality/audit/README.md`; the internal auditor launches the audit when its date comes.
 
-## Da «Gara con ISO 9001»
+## From «Tender with ISO 9001»
 
-Fino alla 1.2.0 questo metodo era «Gara con ISO 9001» (id `gara-iso`) e portava solo la gara. Dalla 2.0.0 la gara è
-l'esempio del metodo, nel ramo `esempio`. Un progetto creato con `gara-iso` resta com'è: non si aggiorna a `iso9001`,
-che è un altro template.
+Up to 1.2.0 this method was «Tender with ISO 9001» (id `gara-iso`, Italian only) and brought only the tender. From 2.0.0
+the tender is the method's example, in the `example` branch. A project created with `gara-iso` stays as it is: it does
+not update to `iso9001`, which is another template.

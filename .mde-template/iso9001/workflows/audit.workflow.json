@@ -1,31 +1,31 @@
 {
   "mde_workflow": 3,
-  "title": "L'audit interno",
-  "description": "L'audit interno del piano (ISO 9001, 9.2): il rapporto con le prove, approvato dall'auditor interno; la direzione decide le azioni.",
+  "title": "The internal audit",
+  "description": "The internal audit of the plan (ISO 9001, 9.2): the report with the evidence, approved by the internal auditor; management decides the actions.",
   "steps": [
     {
-      "id": "rapporto",
+      "id": "report",
       "agent": "iso9001-auditor",
-      "skill": "audit-interno",
-      "title": "Prepara il rapporto",
+      "skill": "internal-audit",
+      "title": "Prepare the report",
       "trigger": { "launch": true },
       "start": "manual"
     },
     {
-      "id": "azioni",
-      "person": "Direzione",
-      "title": "Decidi le azioni",
-      "trigger": { "after": ["rapporto"] },
-      "task": "Leggi il rapporto dell'audit interno e decidi: per ogni rilievo, la correzione o l'azione correttiva (ISO 9001, 10.2), chi la fa ed entro quando. La decisione, con chi e quando, resta nel registro dei giri.",
+      "id": "actions",
+      "person": "Management",
+      "title": "Decide the actions",
+      "trigger": { "after": ["report"] },
+      "task": "Read the internal audit report and decide: for every finding, the correction or the corrective action (ISO 9001, 10.2), who does it and by when. The decision, with who and when, stays in the round log.",
       "inputs": {
-        "rapporto": { "from": "rapporto.rapporto" }
+        "report": { "from": "report.report" }
       },
       "produces": [
-        { "id": "azioni", "path": "qualita/audit/azioni-*.md", "note": "le azioni decise, rilievo per rilievo" }
+        { "id": "actions", "path": "quality/audit/actions-*.md", "note": "the actions decided, finding by finding" }
       ],
       "outcomes": [
-        { "id": "azioni-decise", "label": "Azioni decise" },
-        { "id": "nessuna-azione", "label": "Nessuna azione" }
+        { "id": "actions-decided", "label": "Actions decided" },
+        { "id": "no-action", "label": "No action" }
       ]
     }
   ]

@@ -1,0 +1,32 @@
+{
+  "mde_workflow": 3,
+  "title": "A process becomes a workflow",
+  "description": "The designer proposes the workflow of the processes to design; the quality manager decides whether the proposal is built.",
+  "steps": [
+    {
+      "id": "proposal",
+      "agent": "iso9001-designer",
+      "skill": "propose-workflow",
+      "title": "Propose the workflow",
+      "trigger": { "launch": true },
+      "start": "manual"
+    },
+    {
+      "id": "decision",
+      "person": "Quality manager",
+      "title": "Decide on the proposal",
+      "trigger": { "after": ["proposal"] },
+      "task": "Read the proposal, answer the open questions and decide whether it is built: you put the workflow to work with the MarkAgent (mde-workflow skill), then in quality/processes.md you write its path instead of «to design».",
+      "inputs": {
+        "proposal": { "from": "proposal.proposal" }
+      },
+      "outcomes": [
+        { "id": "build-it", "label": "Build it" },
+        { "id": "redo", "label": "Redo" }
+      ]
+    }
+  ],
+  "loops": [
+    { "id": "rework", "steps": ["proposal"], "until": "approved", "restart": "manual" }
+  ]
+}

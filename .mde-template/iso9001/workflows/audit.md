@@ -1,28 +1,28 @@
 ---
 mde_type: workflow
-title: L'audit interno
+title: The internal audit
 workflow: audit.workflow.json
 ---
 
-# L'audit interno
+# The internal audit
 
 ## TL;DR
 
-L'audit interno (ISO 9001, 9.2) del piano in `qualita/audit/README.md`: l'agente prepara il rapporto con una prova per
-ogni rilievo, l'auditor interno lo verifica e lo approva, la direzione decide le azioni (10.2).
+The internal audit (ISO 9001, 9.2) of the plan in `quality/audit/README.md`: the agent prepares the report with one piece
+of evidence for every finding, the internal auditor checks and approves it, management decides the actions (10.2).
 
-- L'auditor interno lancia l'agente quando arriva l'audit «da fare» del piano.
-- Chi approva il rapporto non deve rispondere dei processi controllati: l'indipendenza la garantisce la persona, non l'agente.
-- Rapporto e azioni restano in `qualita/audit/`, le decisioni nel registro dei giri.
+- The internal auditor launches the agent when the audit «to do» of the plan comes.
+- Whoever approves the report must not answer for the processes audited: the person guarantees independence, not the agent.
+- Report and actions stay in `quality/audit/`, the decisions in the round log.
 
-## Il giro
+## The round
 
 ```plantuml(@workflow, ./audit.workflow.json)
 ```
 
-## Chi fa che cosa
+## Who does what
 
-| Passo | Chi lavora | Che cosa consegna | Chi approva |
+| Step | Who works | What they deliver | Who approves |
 |---|---|---|---|
-| Prepara il rapporto | agente dell'auditor interno | `qualita/audit/audit-<data>.md` | l'auditor interno |
-| Decidi le azioni | la direzione | `qualita/audit/azioni-<data>.md` e la decisione | — |
+| Prepare the report | internal auditor's assistant agent | `quality/audit/audit-<date>.md` | the internal auditor |
+| Decide the actions | management | `quality/audit/actions-<date>.md` and the decision | — |
