@@ -13,16 +13,29 @@ roles:
   - { role: Quality manager, description: "answers for the quality system: approves the processes and their workflows", agents: [iso9001-designer] }
   - { role: Internal auditor, description: "does the internal audit; does not audit the processes they answer for", agents: [iso9001-auditor] }
   - { role: Management, description: "decides the actions after the audit and does the management review" }
+  - { role: Account manager, description: "searches the calls, writes the review and decides whether to bid", agents: [iso9001-account-manager] }
+  - { role: Technical lead, description: approves the technical sheet, agents: [iso9001-technical-lead] }
+  - { role: Legal lead, description: approves the contract sheet, agents: [iso9001-legal-lead] }
+  - { role: Delivery lead, description: approves the delivery sheet, agents: [iso9001-delivery-lead] }
 workflows:
   - .mde-template/iso9001/workflows/process.md
   - .mde-template/iso9001/workflows/audit.md
-instructions: .mde-template/iso9001/instructions.md
+  - .mde-template/iso9001/workflows/tender.md
+instructions: .mde-template/iso9001/example/instructions.md
 slides:
   en: .mde-template/iso9001/presentation.md
 theory:
   en: { from: .mde-template/iso9001/theory, to: theory/iso9001 }
 seeds:
   - { from: .mde-template/iso9001/seeds/quality.md, to: quality/README.md }
-  - { from: .mde-template/iso9001/seeds/processes.md, to: quality/processes.md }
+  - { from: .mde-template/iso9001/example/processes.md, to: quality/processes.md }
   - { from: .mde-template/iso9001/seeds/proposals.md, to: quality/proposals/README.md }
   - { from: .mde-template/iso9001/seeds/audit.md, to: quality/audit/README.md }
+  - { from: .mde-template/iso9001/tender/seeds/README.md, to: tenders/README.md }
+  - { from: .mde-template/iso9001/example/company-profile.md, to: tenders/company-profile.md }
+  - { from: .mde-template/iso9001/example/calls.md, to: tenders/calls.md }
+  - { from: .mde-template/iso9001/example/call-register.md, to: tenders/call-register.md }
+  - { from: .mde-template/iso9001/tender/seeds/tender-documents.md, to: tenders/tender-documents/README.md }
+  - { from: .mde-template/iso9001/tender/seeds/searches.md, to: tenders/searches/README.md }
+  - { from: .mde-template/iso9001/tender/seeds/sheets.md, to: tenders/sheets/README.md }
+  - { from: .mde-template/iso9001/example/NC-2027-014-specification.md, to: tenders/tender-documents/NC-2027-014-specification.md }

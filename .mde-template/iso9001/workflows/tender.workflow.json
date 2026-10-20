@@ -1,0 +1,78 @@
+{
+  "mde_workflow": 3,
+  "title": "Tender: from the call to the review and the decision",
+  "description": "From the call for tenders found to the requirements review (ISO 9001, 8.2.3) and the account manager's recorded decision whether to bid.",
+  "variables": {
+    "code": "the code of the call for tenders the round is on, chosen with «Start the round»",
+    "specification": "the tender document of the call, put by the group in tenders/tender-documents/",
+    "search": "the account manager's search, with the question it leaves to each lead"
+  },
+  "steps": [
+    {
+      "id": "search",
+      "agent": "iso9001-account-manager",
+      "skill": "find-tenders",
+      "title": "Search the calls",
+      "trigger": { "launch": true },
+      "start": "manual"
+    },
+    {
+      "id": "technical",
+      "agent": "iso9001-technical-lead",
+      "skill": "technical-sheet",
+      "title": "Technical sheet",
+      "trigger": { "reply": "start-round", "to": "search" },
+      "start": "ask-owner",
+      "inputs": { "code": "{code}", "specification": "{specification}", "search": "{search}", "criterion": "2 — competence" }
+    },
+    {
+      "id": "contract",
+      "agent": "iso9001-legal-lead",
+      "skill": "contract-sheet",
+      "title": "Contract sheet",
+      "trigger": { "reply": "start-round", "to": "search" },
+      "start": "ask-owner",
+      "inputs": { "code": "{code}", "specification": "{specification}", "search": "{search}", "criterion": "4 — contract risk" }
+    },
+    {
+      "id": "delivery",
+      "agent": "iso9001-delivery-lead",
+      "skill": "delivery-sheet",
+      "title": "Delivery sheet",
+      "trigger": { "reply": "start-round", "to": "search" },
+      "start": "ask-owner",
+      "inputs": { "code": "{code}", "specification": "{specification}", "search": "{search}", "criterion": "3 — delivery timing" }
+    },
+    {
+      "id": "review",
+      "agent": "iso9001-account-manager",
+      "skill": "requirements-review",
+      "title": "Requirements review",
+      "trigger": { "after": ["technical", "contract", "delivery"], "wait": "all" },
+      "start": "auto",
+      "inputs": {
+        "code": "{code}",
+        "specification": "{specification}",
+        "search": "{search}",
+        "sheets": { "from": ["technical.sheet", "contract.sheet", "delivery.sheet"] }
+      }
+    },
+    {
+      "id": "decision",
+      "person": "Account manager",
+      "title": "Decide whether to bid",
+      "trigger": { "after": ["review"] },
+      "task": "Read the requirements review on the call {code} and decide whether the company bids. Your choice, with who and when, stays in the round log: it is the record of the review (ISO 9001, 8.2.3.2).",
+      "inputs": {
+        "review": { "from": "review.review" }
+      },
+      "outcomes": [
+        { "id": "bid", "label": "We bid" },
+        { "id": "no-bid", "label": "We do not bid" }
+      ]
+    }
+  ],
+  "loops": [
+    { "id": "rework", "steps": ["technical", "contract", "delivery"], "until": "approved", "restart": "manual" }
+  ]
+}
